@@ -1,3 +1,5 @@
 .DS_Store
-py-env/
+my-env/
 *__pycache__*
+.git
+.env
