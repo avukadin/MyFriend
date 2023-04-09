@@ -1,21 +1,9 @@
-
-import platform
-import tkinter as tk
 import webbrowser
-from time import sleep
-import os
-
-import cv2 as cv
-import pyttsx3
-import speech_recognition as sr
-from pynput.keyboard import Controller, Key
-
 import config
-from pkg.Brain import Actions, Brain
+from pkg.Brain import Brain
 from pkg.Ears import Ears
-from pkg.Mouth import Mouth
 from pkg.Hands import Hands
-import asyncio
+from pkg.Mouth import Mouth
 
 class HAL9000():
     brain:Brain

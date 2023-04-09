@@ -12,7 +12,6 @@ class Actions(Enum):
     explain_code = 4
     rewrite_code = 5
 
-
 class Brain():
     audio_recognizer = sr.Recognizer()
     memory:list[dict[str,str]] = []
