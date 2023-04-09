@@ -12,3 +12,28 @@ class Ears():
             self._listener.adjust_for_ambient_noise(source, duration=0.2)
             audio = self._listener.listen(source)
         return audio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

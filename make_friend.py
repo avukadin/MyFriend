@@ -1,14 +1,13 @@
-from pkg.Brain import Brain
-from pkg.Ears import Ears
-from pkg.Mouth import Mouth
-from pkg.MyFriend import MyFriend
+import os
+import threading
 
-from config import GPT_MODEL
+from pkg.HAL9000 import HAL9000
 
 if __name__ == "__main__":
-    brain = Brain('Francis', GPT_MODEL)
-    friend = MyFriend(brain)
-    friend.ears = Ears()
-    friend.mouth = Mouth()
+    friend = HAL9000()
 
-    friend.start()
+    # Show image on different thread to prevent blocking
+    download_thread = threading.Thread(target=os.system, args=('python show_hal.py',))
+    download_thread.start()
+
+    friend.start()    

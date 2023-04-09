@@ -9,3 +9,4 @@ class Mouth():
     def say(self, text:str):
         self.speaker.say(text)
         self.speaker.runAndWait()
+
