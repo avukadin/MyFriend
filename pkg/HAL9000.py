@@ -4,6 +4,7 @@ from pkg.Brain import Brain
 from pkg.Ears import Ears
 from pkg.Hands import Hands
 from pkg.Mouth import Mouth
+from pkg.Brain import Actions
 
 class HAL9000():
     brain:Brain
@@ -31,13 +32,17 @@ class HAL9000():
                 self.mouth.say(response)
             elif action == Actions.explain_code:
                 c = self.hands.copy_highlighted() 
-                response = self.brain.formulate_response(f"Explain this code to me:\n{c}")
+                response = self.brain.formulate_response(
+                        f"Explain this code to me:\n{c}")
                 self.mouth.say(response)
             elif action == Actions.rewrite_code:
                 c = self.hands.copy_highlighted() 
-                response = self.brain.formulate_response(f"Rewrite this code for me in a cleaner way. Only show the code.\n{c}")
+                response = self.brain.formulate_response(
+                        f"Rewrite this code for me in a cleaner way."\
+                        "Only show the code.\n{c}")
                 self.hands.paste(response)
             elif action == Actions.weather:
                 self.mouth.say(f"This is the weather in {config.MY_LOCATION}")
-                url = 'https://www.google.com/search?q=weather+' + config.MY_LOCATION.replace(' ', '+')
+                url = 'https://www.google.com/search?q=weather+'\
+                        + config.MY_LOCATION.replace(' ', '+')
                 webbrowser.open(url)
